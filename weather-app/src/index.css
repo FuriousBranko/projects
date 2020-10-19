@@ -8,20 +8,24 @@
   box-sizing: border-box;
 }
 /* Mobile First concept */
-.app {
+main{
+  margin: 0;
+}
+.app main{
   background-position: bottom;
   background-size: cover;
   transition: 0.4 ease-out;
 }
 
-.app.sunny{
+.app.sunny main{
   background-image: url("./assets/sunny.gif");
 }
-.app.winter {
+
+.app.winter main{
   background-image: url("./assets/snow.gif");
 }
 
-.app.rain {
+.app.rain main{
   background-image: url("./assets/rain.gif");
 }
 
@@ -61,6 +65,14 @@ main {
 .search-box .search-bar:focus {
   background-color: rgba(255,255,255,0.6);
   color: rgba(31, 31, 31, 0.8);
+}
+
+.load, .found{
+  color: ivory;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.3);
 }
 
 .location-box .location{
@@ -140,6 +152,14 @@ main {
     background-color: rgba(255,255,255,0.6);
   }
   .location-box .location{
-    font-size: 100px;
+    font-size: 80px;
+  }
+  main{
+    width: 50%;
+    height: 100vh;
+    margin: 0 auto;
+    border: 3px none ivory;
+    border-radius: 5%;
+    /* box-shadow: 3px 6px rgba(0, 0, 0, 0.6); */
   }
 }
