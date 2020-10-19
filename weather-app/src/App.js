@@ -8,14 +8,18 @@ const api = {
 function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState('');
-
+  const [loading, setLoading] = useState(false);
+  
   const search = evt => {
     if (evt.key === "Enter") {
+      setLoading(true);
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then(res => res.json())
       .then(result => {
+        
         setWeather(result);
         setQuery('');
+        setLoading(false);
         // console.log(result)
       });
     }
@@ -83,7 +87,7 @@ function App() {
             onKeyPress={search}
           />
         </div>
-        {(typeof weather.main != "undefined") ? (
+        {(typeof weather.main != "undefined") ? ( loading ? "Loading..." : (
           <div>
             <div className="location-box">
               <div className="location">
@@ -106,7 +110,7 @@ function App() {
               </div>
             </div>
           </div>
-        ) : ('')}
+        )) : ('')}
         
       </main>
     </div>
