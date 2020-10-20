@@ -21,7 +21,7 @@ main{
   background-image: url("./assets/sunny.gif");
 }
 
-.app.winter main{
+.app.snow main{
   background-image: url("./assets/snow.gif");
 }
 

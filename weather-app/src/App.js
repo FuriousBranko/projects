@@ -38,6 +38,7 @@ function App() {
       "April",
       "May",
       "June",
+      "July",
       "August",
       "September",
       "October",
@@ -60,15 +61,31 @@ function App() {
     let year = d.getFullYear();
 
     switch (date) {
-      case 1 || 21 || 31:
+      case 1:
         date += "st";
         break;
 
-      case 2 || 22:
+      case 21:
+        date += "st";
+        break;
+
+      case 31:
+        date += "st";
+        break;
+      
+      case 2:
         date += "nd";
         break;
 
-      case 3 || 23:
+      case 22:
+        date += "nd";
+        break;
+
+      case 3:
+        date += "rd";
+        break;
+        
+      case 23:
         date += "rd";
         break;
 
